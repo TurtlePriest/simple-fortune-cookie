@@ -30,4 +30,10 @@ jobs:
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/build-frontend-docker.sh
         - name: push docker frontend
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/push-frontend-docker.sh
+  Run-on-server:
+      runs-on: self-hosted
+      needs: Docker-image
+      steps:
+        - name: run compose
+          run: bash ci/composeup.sh
   
