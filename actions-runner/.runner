@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 21,
+  "agentName": "devopsacademy-instance81",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/PyYAghmWHBZff5bKgICXrdlViKhXvLp6XH1iS2mjuaM68nBNOb",
+  "gitHubUrl": "https://github.com/TurtlePriest/simple-fortune-cookie",
+  "workFolder": "_work"
+}
