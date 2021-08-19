@@ -1,0 +1,22 @@
+version: "3"
+services: 
+    database: 
+        image: turtlepriest/fortune-app-database
+        network_mode: "host"
+
+    frontend: 
+        image: turtlepriest/fortune-app-frontend
+        ports: 
+        - 8080:8080
+        depends_on:
+        - backend
+        network_mode: "host"
+        
+    backend: 
+        image: turtlepriest/fortune-app-backend
+        network_mode: "host"
+        depends_on:
+        - database
+
+
+    
