@@ -26,8 +26,8 @@ jobs:
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/build-backend-docker.sh
         - name: push docker backend
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/push-backend-docker.sh
-        - name: build docker backend
+        - name: build docker frontend
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/build-frontend-docker.sh
-        - name: push docker backend
+        - name: push docker frontend
           run: export GIT_COMMIT="GA-$GITHUB_SHA" && bash ci/push-frontend-docker.sh
   
