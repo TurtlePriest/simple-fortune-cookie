@@ -2,7 +2,6 @@ version: "3"
 services: 
     database: 
         image: turtlepriest/fortune-app-database
-        network_mode: "host"
 
     frontend: 
         image: turtlepriest/fortune-app-frontend
@@ -10,13 +9,15 @@ services:
         - 8080:8080
         depends_on:
         - backend
-        network_mode: "host"
-        
+        environment:
+            - BACKEND_DNS=backend
+
     backend: 
         image: turtlepriest/fortune-app-backend
-        network_mode: "host"
         depends_on:
         - database
+        environment: 
+            - REDIS_DNS=database
 
 
     
