@@ -1,0 +1,23 @@
+version: "3"
+services: 
+    database: 
+        image: turtlepriest/fortune-app-database
+
+    frontend: 
+        image: turtlepriest/fortune-app-frontend
+        ports: 
+        - 8080:8080
+        depends_on:
+        - backend
+        environment:
+            - BACKEND_DNS=backend
+
+    backend: 
+        image: turtlepriest/fortune-app-backend
+        depends_on:
+        - database
+        environment: 
+            - REDIS_DNS=database
+
+
+    
